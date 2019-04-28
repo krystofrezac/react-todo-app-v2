@@ -1,0 +1,191 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+body #root #App {
+  display: grid;
+  grid-template-columns: 5em 1fr;
+}
+body #root #App #Nav {
+  height: 100vh;
+  background-color: #F1F1F1;
+  display: grid;
+}
+body #root #App #Nav #wrapper {
+  justify-self: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 2em 0 1em 0;
+  display: grid;
+  grid-gap: 2em;
+}
+body #root #App #Nav #wrapper a {
+  transition-duration: 0.2s;
+  border-left: 0.2em solid #F1F1F1;
+  width: 5em;
+  display: grid;
+}
+body #root #App #Nav #wrapper a.selected {
+  border-left: 0.2em solid #5A95C0;
+}
+body #root #App #Nav #wrapper a:hover {
+  border-left: 0.2em solid #5A95C0;
+}
+body #root #App #Nav #wrapper a img {
+  align-self: center;
+  justify-self: center;
+  height: 2em;
+}
+body #root #App #TodoForm {
+  display: grid;
+  height: 100%;
+}
+body #root #App #TodoForm #wrapper {
+  margin: 2em 10em;
+  justify-self: center;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 1fr 1fr auto;
+  grid-template-areas: "category des" "date des" "done des" "buttons buttons";
+  grid-gap: 1em;
+}
+body #root #App #TodoForm #wrapper input, body #root #App #TodoForm #wrapper textarea {
+  font-family: Poppins, sans-serif;
+  font-size: larger;
+  font-weight: lighter;
+  padding: 0.5em;
+  background-color: #F1F1F1;
+  border: 0.1em solid transparent;
+  border-radius: 0.4em;
+  outline: 0;
+}
+body #root #App #TodoForm #wrapper input:focus, body #root #App #TodoForm #wrapper textarea:focus {
+  border: 0.1em solid #5A95C0;
+}
+body #root #App #TodoForm #wrapper #category {
+  grid-area: category;
+}
+body #root #App #TodoForm #wrapper #date {
+  grid-area: date;
+}
+body #root #App #TodoForm #wrapper #done {
+  grid-area: done;
+}
+body #root #App #TodoForm #wrapper #description {
+  grid-area: des;
+  resize: none;
+}
+body #root #App #TodoForm #wrapper #buttons {
+  grid-area: buttons;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5em;
+}
+body #root #App #TodoForm #wrapper #buttons #submitButton, body #root #App #TodoForm #wrapper #buttons #cancelButton {
+  background-color: #5A95C0;
+  border-radius: 0.4em;
+  padding: 0.5em;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  width: fit-content;
+  font-family: Poppins, sans-serif;
+  font-size: larger;
+  font-weight: lighter;
+}
+body #root #App #TodoForm #wrapper #buttons #submitButton {
+  justify-self: end;
+}
+body #root #App #TodoForm #wrapper #buttons #cancelButton {
+  justify-self: start;
+}
+body #root #App #TodosContainer {
+  display: grid;
+  padding-top: 1em;
+  padding-left: 1em;
+  height: fit-content;
+}
+body #root #App #TodosContainer .Todo {
+  padding: 0 1em 0 1em;
+  border-radius: 0.4em;
+  margin-right: 1em;
+}
+body #root #App #TodosContainer .Todo:hover {
+  background-color: #5A95C0;
+}
+body #root #App #TodosContainer .Todo:hover .category, body #root #App #TodosContainer .Todo:hover .description, body #root #App #TodosContainer .Todo:hover .date, body #root #App #TodosContainer .Todo:hover .done {
+  color: #ffffff;
+}
+body #root #App #TodosContainer .Todo:hover .wrapper {
+  border-bottom: 0.05em solid rgba(0, 0, 0, 0);
+}
+body #root #App #TodosContainer .Todo:not(:hover) .wrapper {
+  border-bottom: 0.05em solid #000000;
+}
+body #root #App #TodosContainer .Todo .wrapper {
+  display: grid;
+  grid-template-areas: "category description date done";
+  grid-template-columns: 2fr 5fr 1fr 1fr auto;
+  grid-gap: 1em;
+  padding: 0 1em;
+}
+body #root #App #TodosContainer .Todo .wrapper .category, body #root #App #TodosContainer .Todo .wrapper .description, body #root #App #TodosContainer .Todo .wrapper .date, body #root #App #TodosContainer .Todo .wrapper .done {
+  font-family: Poppins, sans-serif;
+  font-size: larger;
+  font-weight: lighter;
+  padding: 1em 0 1em 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body #root #App #TodosContainer .Todo .wrapper .icons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.75em;
+  align-self: center;
+  align-content: center;
+}
+body #root #App #TodosContainer .Todo .wrapper .icons img {
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+}
+body #root #App #SearchContainer {
+  display: grid;
+}
+body #root #App #SearchContainer #Search {
+  justify-self: center;
+  height: fit-content;
+  margin-top: 2em;
+  display: grid;
+  grid-gap: 1em;
+}
+body #root #App #SearchContainer #Search .checkBoxes {
+  font-family: Poppins, sans-serif;
+  font-size: larger;
+  font-weight: lighter;
+  padding: 0.5em;
+  align-content: center;
+  display: grid;
+  grid-gap: 0.5em;
+  grid-template-columns: auto 1fr;
+  background-color: #F1F1F1;
+  border-radius: 0.4em;
+}
+body #root #App #SearchContainer #Search input {
+  font-family: Poppins, sans-serif;
+  font-size: larger;
+  font-weight: lighter;
+  padding: 0.5em;
+  background-color: #F1F1F1;
+  border: 0.1em solid transparent;
+  border-radius: 0.4em;
+  outline: 0;
+}
+body #root #App #SearchContainer #Search input:focus {
+  border: 0.1em solid #5A95C0;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,59 @@
+@import "../../assets/Fonts";
+@import "../../assets/Colors";
+
+.Todo{
+  padding: 0 1em 0 1em;
+
+  border-radius: 0.4em;
+
+  margin-right: 1em;
+
+  &:hover{
+    background-color: $blue;
+
+    .category,.description,.date,.done{
+      color: $white;
+    }
+    .wrapper{
+      border-bottom: 0.05em solid rgba(0,0,0,0);
+    }
+  }
+  &:not(:hover){
+    .wrapper{
+      border-bottom: 0.05em solid $black;
+    }
+  }
+  .wrapper{
+    display: grid;
+    grid-template-areas: "category description date done";
+    grid-template-columns: 2fr 5fr 1fr 1fr auto;
+
+    grid-gap: 1em;
+
+    padding: 0 1em;
+
+    .category,.description,.date,.done{
+      @include defaultFont;
+
+      padding: 1em 0 1em 0;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .icons{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 0.75em;
+
+      align-self: center;
+      align-content: center;
+      img{
+        cursor: pointer;
+
+        width: 1em;
+        height: 1em;
+      }
+    }
+  }
+}

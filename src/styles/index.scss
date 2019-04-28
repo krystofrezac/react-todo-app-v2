@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  #root {
+    @import "App";
+
+    #App {
+      @import "./components/Nav";
+      @import "./components/todoForm/TodoForm";
+      @import "./components/todos/TodosContainer";
+
+      #TodosContainer {
+        @import "./components/todos/Todo";
+      }
+
+      @import "./components/search/SearchContainer";
+
+      #SearchContainer {
+        @import "./components/search/Search";
+      }
+
+    }
+  }
+
+}

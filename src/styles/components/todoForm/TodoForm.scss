@@ -1,0 +1,86 @@
+@import "../../assets/Fonts";
+@import "../../assets/Colors";
+
+#TodoForm {
+  display: grid;
+
+  height: 100%;
+
+  #wrapper {
+    margin: 2em 10em;
+    justify-self: center;
+
+    height: fit-content;
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr auto;
+    grid-template-areas: "category des" "date des" "done des" "buttons buttons";
+    grid-gap: 1em;
+
+    input, textarea {
+      @include defaultFont;
+
+      padding: 0.5em;
+      background-color: $lightGray;
+      border: 0.1em solid transparent;
+      border-radius: 0.4em;
+
+      outline: 0;
+
+      &:focus {
+        border: 0.1em solid $blue
+      }
+    }
+
+    #category {
+      grid-area: category;
+    }
+
+    #date {
+      grid-area: date;
+    }
+
+    #done {
+      grid-area: done;
+
+    }
+
+    #description {
+      grid-area: des;
+      resize: none;
+    }
+
+    #buttons {
+      grid-area: buttons;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 5em;
+
+      #submitButton, #cancelButton {
+        background-color: $blue;
+        border-radius: 0.4em;
+        padding: 0.5em;
+        color: $white;
+        border: none;
+
+        cursor: pointer;
+
+        text-align: center;
+
+        width: fit-content;
+
+        @include defaultFont;
+
+      }
+
+      #submitButton {
+        justify-self: end;
+      }
+
+      #cancelButton {
+        justify-self: start;
+      }
+    }
+  }
+}

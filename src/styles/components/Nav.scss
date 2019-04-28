@@ -1,0 +1,42 @@
+@import "../assets/Colors";
+
+#Nav {
+  height: 100vh;
+  background-color: $lightGray;
+
+  display: grid;
+
+  #wrapper {
+    justify-self: center;
+
+    width: fit-content;
+    height: fit-content;
+
+    padding: 2em 0 1em 0;
+
+    display: grid;
+    grid-gap: 2em;
+
+    a{
+      transition-duration: 0.2s;
+      border-left: 0.2em solid $lightGray;
+      width: 5em;
+      display: grid;
+
+      &.selected{
+        border-left: 0.2em solid $blue;
+      }
+
+      &:hover {
+        border-left: 0.2em solid $blue;
+      }
+
+      img {
+        align-self: center;
+        justify-self: center;
+
+        height: 2em;
+      }
+    }
+  }
+}

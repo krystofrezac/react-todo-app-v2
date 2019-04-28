@@ -1,5 +1,5 @@
 {
-  "name": "todo-app-v2",
+  "name": "react-todo-app-v2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,8 +7,12 @@
     "@types/node": "11.13.8",
     "@types/react": "16.8.14",
     "@types/react-dom": "16.8.4",
+    "@types/react-redux": "^7.0.8",
+    "@types/react-router-dom": "^4.3.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-redux": "latest",
+    "react-router-dom": "latest",
     "react-scripts": "3.0.0",
     "typescript": "3.4.5"
   },

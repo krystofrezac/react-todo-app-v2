@@ -1,0 +1,40 @@
+@import "../../assets/Colors";
+@import "../../assets/Fonts";
+
+#Search{
+  justify-self: center;
+  height: fit-content;
+  margin-top: 2em;
+
+  display: grid;
+  grid-gap: 1em;
+
+  .checkBoxes{
+    @include defaultFont;
+
+    padding: 0.5em;
+    align-content: center;
+
+    display: grid;
+    grid-gap: 0.5em;
+    grid-template-columns: auto 1fr;
+
+    background-color: $lightGray;
+    border-radius: 0.4em;
+
+  }
+
+  input{
+    @include defaultFont;
+    padding: 0.5em;
+    background-color: $lightGray;
+    border: 0.1em solid transparent;
+    border-radius: 0.4em;
+
+    outline: 0;
+
+    &:focus {
+      border: 0.1em solid $blue;
+    }
+  }
+}
